@@ -1,0 +1,53 @@
+﻿@using ICom.Core.AuthSecurity
+@model ICom.Web.Controllers.Account.ViewModels.LoginViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Login | ICom</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix">
+                <hgroup class="title">
+                    <h1>Välkommen!</h1>
+                </hgroup>
+
+                @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div>
+                        @Html.LabelFor(m => m.InputModel.UserName)
+                        @Html.TextBoxFor(m => m.InputModel.UserName)
+                        @Html.ValidationMessageFor(m => m.InputModel.UserName)
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.InputModel.Password)
+                        @Html.PasswordFor(m => m.InputModel.Password)
+                        @Html.ValidationMessageFor(m => m.InputModel.Password)
+                    </div>
+                    <input type="submit" value="Logga in" />
+                }
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+    </body>
+</html>
+
