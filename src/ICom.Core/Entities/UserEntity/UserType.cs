@@ -1,8 +1,8 @@
 namespace ICom.Core.Entities.UserEntity
 {
     public enum UserType {
-        Developer = 0,
-        Administrator,
-        Normal
+        Normal = 10,
+        Administrator = 20,
+        Developer = 30
     }
 }

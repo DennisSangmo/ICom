@@ -9,7 +9,7 @@ namespace ICom.Web.App_Start
 {
     public class StructureMapConfig
     {
-        public static void Register(ISession session)
+        public static void Register(ISessionFactory sessionFactory)
         {
             ObjectFactory.Initialize(x => {
                                          x.SetAllProperties(y => {
@@ -20,7 +20,8 @@ namespace ICom.Web.App_Start
             ObjectFactory.Configure(x =>{
                                         x.For<IControllerActivator>()
                                             .Use<StructureMapControllerActivator>();
-                                        x.For<ISession>().Use(session);
+                                        x.For<ISessionFactory>().Singleton().Use(sessionFactory);
+                                        x.For<ISession>().HybridHttpOrThreadLocalScoped().Use(c => c.GetInstance<ISessionFactory>().OpenSession());
                                         x.For(typeof(IStorage<>)).Use(typeof(SessionStorage<>));
                                         x.FillAllPropertiesOfType<IStorage<User>>();
                                     });

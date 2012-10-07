@@ -185,6 +185,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\StructureMapConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\InputModels\LoginInputModel.cs" />
     <Compile Include="Controllers\Account\ViewModels\LoginViewModel.cs" />
@@ -193,8 +196,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ActionFilters\AdminsOnlyAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilters\RetrieveUserAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilters\TransactionalAttribute.cs" />
+    <Compile Include="Infrastructure\ActionResults\AccessDeniedActionResult.cs" />
     <Compile Include="Infrastructure\Authorization\Storage\IStorage.cs" />
     <Compile Include="Infrastructure\Authorization\Storage\SessionStorage.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\HtmlHelper.cs" />
@@ -217,6 +222,7 @@
     <Content Include="Assets\Images\orderedList7.png" />
     <Content Include="Assets\Images\orderedList8.png" />
     <Content Include="Assets\Images\orderedList9.png" />
+    <Content Include="Areas\Admin\Views\Web.config" />
     <None Include="Assets\Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.min.js" />
@@ -305,9 +311,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\AccessDenied.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

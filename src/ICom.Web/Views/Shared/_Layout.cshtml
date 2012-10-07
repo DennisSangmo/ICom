@@ -23,6 +23,9 @@
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            @if(Html.IsAdmin()) {
+                                <li>@Html.ActionLink("Administration", "Index", "Admin", new{area = "admin"}, null)</li>
+                            }
                         </ul>
                     </nav>
                 </div>

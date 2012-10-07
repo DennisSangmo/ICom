@@ -1,12 +1,9 @@
 using ICom.Core.AuthSecurity;
-using ICom.Core.Entities;
 using ICom.Core.Entities.UserEntity;
 using NHibernate;
 
-namespace ICom.Core.Services
-{
-    public class UserService
-    {
+namespace ICom.Core.Services {
+    public class UserService {
         private readonly ISession _session;
 
         public UserService(ISession session) {

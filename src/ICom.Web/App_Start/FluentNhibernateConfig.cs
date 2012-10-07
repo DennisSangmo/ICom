@@ -11,7 +11,7 @@ namespace ICom.Web.App_Start
         private const string AssemblyName = "ICom.Core";
 
         private static Configuration _config;
-        private static ISessionFactory _sessionFactory;
+        public static ISessionFactory SessionFactory;
 
         public static void CreateConfig()
         {
@@ -19,15 +19,7 @@ namespace ICom.Web.App_Start
                            .Database(MySQLConfiguration.Standard.ConnectionString(x => x.FromConnectionStringWithKey("localhost")))
                            .Mappings(x => x.FluentMappings.AddFromAssembly(Assembly.Load(AssemblyName))).BuildConfiguration();
             
-            _sessionFactory = _config.BuildSessionFactory();
-        }
-
-        public static ISession GetSession()
-        {
-            if (_sessionFactory == null)
-                CreateConfig();
-
-            return _sessionFactory.OpenSession();
+            SessionFactory = _config.BuildSessionFactory();
         }
     }
 }

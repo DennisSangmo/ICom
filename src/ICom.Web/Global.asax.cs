@@ -20,7 +20,7 @@ namespace ICom.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             FluentNhibernateConfig.CreateConfig();
-            StructureMapConfig.Register(FluentNhibernateConfig.GetSession());
+            StructureMapConfig.Register(FluentNhibernateConfig.SessionFactory);
             NHibernateProfilerBootstrapper.PreStart();
         }
     }
