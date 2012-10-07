@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using ICom.Core.Domain;
-using ICom.Core.Services;
 using ICom.Web.Infrastructure.ActionFilters;
 using ICom.Web.Infrastructure.Authorization.Storage;
 
@@ -11,16 +10,14 @@ namespace ICom.Web.Controllers
     [Transactional]
     public class BaseController : Controller
     {
-        private readonly IStorage<User> _storage;
-        public UserService UserService { get; set; }
+        public IStorage<User> UserStorage { get; set; }
 
-        public User User { get { return _storage.Get(SessionKeys.User); } }
+        private User _cacheUser;
+        public new User User { get { return _cacheUser ?? (_cacheUser = UserStorage.Get(SessionKeys.User)); } }
 
-        public BaseController(IStorage<User> storage)
-        {
-            _storage = storage;
+        protected override void OnActionExecuting(ActionExecutingContext filterContext) {
+            filterContext.Controller.ViewBag.User = User;
+            base.OnActionExecuting(filterContext);
         }
-
-        public BaseController(){}
     }
 }

@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using HibernatingRhinos.Profiler.Appender.NHibernate;
 using ICom.Web.App_Start;
 
 namespace ICom.Web
@@ -21,6 +22,8 @@ namespace ICom.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             FluentNhibernateConfig.CreateConfig();
             StructureMapConfig.Register(FluentNhibernateConfig.GetSession());
+
+            NHibernateProfiler.Initialize();
         }
     }
 }
