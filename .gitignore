@@ -1,5 +1,6 @@
 [Bb]in/
 [Oo]bj/
+/build/Migrations
 
 # User-specific files
 *.suo
