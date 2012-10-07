@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using ICom.Core.Domain;
+using ICom.Core.Entities.UserEntity;
 
 namespace ICom.Web.Infrastructure.HtmlHelpers
 {

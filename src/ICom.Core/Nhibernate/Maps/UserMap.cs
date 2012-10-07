@@ -1,5 +1,5 @@
 using FluentNHibernate.Mapping;
-using ICom.Core.Domain;
+using ICom.Core.Entities.UserEntity;
 
 namespace ICom.Core.Nhibernate.Maps {
     public class UserMap : ClassMap<User> {
@@ -9,6 +9,8 @@ namespace ICom.Core.Nhibernate.Maps {
 
             Map(x => x.Username);
             Map(x => x.Password);
+            Map(x => x.Name);
+            Map(x => x.Type).CustomType<UserType>().Default("3");
         }
     }
 }

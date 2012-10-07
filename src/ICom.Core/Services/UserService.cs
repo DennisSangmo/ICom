@@ -1,5 +1,6 @@
 using ICom.Core.AuthSecurity;
-using ICom.Core.Domain;
+using ICom.Core.Entities;
+using ICom.Core.Entities.UserEntity;
 using NHibernate;
 
 namespace ICom.Core.Services

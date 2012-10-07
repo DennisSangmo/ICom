@@ -1,5 +1,6 @@
 using System.Web.Mvc;
-using ICom.Core.Domain;
+using ICom.Core.Entities;
+using ICom.Core.Entities.UserEntity;
 using ICom.Core.Services;
 using ICom.Web.Controllers.Account.InputModels;
 using ICom.Web.Controllers.Account.ViewModels;

@@ -190,7 +190,6 @@
     <Compile Include="Controllers\Account\ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
-    <Compile Include="Controllers\Message\MessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,7 +203,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Start\NHibernateProfilerBootstrapper.vb" />
     <Content Include="Assets\Css\Site.css" />
     <Content Include="Assets\Images\accent.png" />
     <Content Include="Assets\Images\bullet.png" />

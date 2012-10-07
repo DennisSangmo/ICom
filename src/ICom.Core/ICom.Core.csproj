@@ -49,8 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthSecurity\Encrypter.cs" />
-    <Compile Include="Domain\Entity.cs" />
-    <Compile Include="Domain\User.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Nhibernate\Maps\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UserService.cs" />

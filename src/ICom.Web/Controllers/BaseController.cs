@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using ICom.Core.Domain;
+using ICom.Core.Entities.UserEntity;
 using ICom.Web.Infrastructure.ActionFilters;
 using ICom.Web.Infrastructure.Authorization.Storage;
 

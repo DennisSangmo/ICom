@@ -1,6 +1,7 @@
 using System.Web;
 using System.Web.Security;
-using ICom.Core.Domain;
+using ICom.Core.Entities;
+using ICom.Core.Entities.UserEntity;
 
 namespace ICom.Web.Infrastructure.Authorization.Storage
 {
