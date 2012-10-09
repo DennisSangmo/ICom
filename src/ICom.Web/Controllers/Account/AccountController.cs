@@ -26,7 +26,7 @@ namespace ICom.Web.Controllers.Account {
             var user = _userService.Login(inputmodel.UserName, inputmodel.Password);
 
             if(user == null) {
-                ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                ModelState.AddModelError("", "Anvädarnamnet eller lösenordet stämmer inte!");
                 return Login();
             }
 

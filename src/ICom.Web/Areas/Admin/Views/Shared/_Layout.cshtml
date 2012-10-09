@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = ViewBag.Title + " | Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clear-fix">
+    <div id="left-menu">
+        <ul>
+            <li>@Html.ActionLink("Hantera användare", "Index", "UserAdmin")</li>
+        </ul>
+    </div>
+
+    <div id="right-content">
+        @RenderBody()
+    </div>
+</div>
+
+@section scripts{
+    @RenderSection("scripts", false)
+}

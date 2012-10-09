@@ -1,0 +1,28 @@
+﻿@using ICom.Core.Extensions
+@model ICom.Web.Areas.Admin.Controllers.UserAdmin.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Hantera användare";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hantera användare</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Namn</th>
+            <th>Användarnamn</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model.Users) {
+            <tr>
+                <td>@Html.ActionLink(user.Name, "Settings", new {id = user.Id})</td>
+                <td>@user.Username</td>
+                <td>@user.Type.GetDescription()</td>
+            </tr>
+        }
+    </tbody>
+</table>

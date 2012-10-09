@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ICom.Core.AuthSecurity;
 using ICom.Core.Entities.UserEntity;
 using NHibernate;
@@ -28,6 +29,10 @@ namespace ICom.Core.Services {
                            .Where(x => x.Username == username)
                            .Take(1)
                            .SingleOrDefault();
+        }
+
+        public IEnumerable<User> GetAll() {
+            return _session.QueryOver<User>().List();
         }
     }
 }

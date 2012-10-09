@@ -3,7 +3,7 @@ using ICom.Core.Entities.UserEntity;
 
 namespace ICom.Web.Infrastructure.HtmlHelpers
 {
-    public static class UserHtmlHelperExt
+    public static class UserHtmlHelper
     {
         public static User User(this HtmlHelper helper) {
             return helper.ViewBag.User as User;

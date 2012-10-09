@@ -1,0 +1,42 @@
+﻿@using ICom.Web.Infrastructure.HtmlHelpers
+@model ICom.Web.Areas.Admin.Controllers.UserAdmin.ViewModels.SettingsViewModel
+
+@{
+    ViewBag.Title = "Inställningar för " + Model.User.Name;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inställningar för @Model.User.Name</h2>
+
+@using (Html.BeginForm(new { id = Model.User.Id })) {
+    <p>
+        @Html.LabelFor(x => x.InputModel.Name)
+        @Html.TextBoxFor(x => x.InputModel.Name)
+        @Html.ValidationMessageFor(x => x.InputModel.Name)
+    </p>
+    <p>
+        @Html.LabelFor(x => x.InputModel.Username)
+        @Html.TextBoxFor(x => x.InputModel.Username)
+        @Html.ValidationMessageFor(x => x.InputModel.Username)
+    </p>
+    
+    <p>@Html.Submit("Uppdatera")</p>
+}
+
+<h2>Byta lösenord</h2>
+
+@using (Html.BeginForm("ChangePassword", "UserAdmin", new { id = Model.User.Id })) {
+    <p>
+        @Html.LabelFor(x => x.PasswordInputModel.Password)
+        @Html.PasswordFor(x => x.PasswordInputModel.Password)
+        @Html.ValidationMessageFor(x => x.PasswordInputModel.Password)
+    </p>
+    
+    <p>
+        @Html.LabelFor(x => x.PasswordInputModel.PasswordRepeat)
+        @Html.PasswordFor(x => x.PasswordInputModel.PasswordRepeat)
+        @Html.ValidationMessageFor(x => x.PasswordInputModel.PasswordRepeat)
+    </p>
+    
+    <p>@Html.Submit("Spara")</p>
+}

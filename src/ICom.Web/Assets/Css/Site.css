@@ -125,6 +125,15 @@ footer {
     height: 100px;
 }
 
+#left-menu {
+    width: 25%;
+    float: left;
+}
+
+#right-content {
+    width: 75%;
+    float: left;
+}
 
 /* site title
 ----------------------------------------------------------*/
@@ -245,13 +254,6 @@ hgroup.title h2 {
     margin-left: 3px;
 }
 
-/* features */
-section.feature {
-    width: 300px;
-    float: left;
-    padding: 10px;
-}
-
 /* ordered list */
 ol.round {
     list-style-type: none;
@@ -326,6 +328,10 @@ aside {
 
 .label {
     font-weight: 700;
+}
+
+.field-validation-error {
+    display: block;
 }
 
 /* login page */

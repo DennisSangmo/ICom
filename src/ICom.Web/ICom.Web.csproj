@@ -188,11 +188,17 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\PasswordInputModel.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\UserInputModel.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\UserAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\IndexViewModel.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\SettingsViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\InputModels\LoginInputModel.cs" />
     <Compile Include="Controllers\Account\ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,12 +208,15 @@
     <Compile Include="Infrastructure\ActionResults\AccessDeniedActionResult.cs" />
     <Compile Include="Infrastructure\Authorization\Storage\IStorage.cs" />
     <Compile Include="Infrastructure\Authorization\Storage\SessionStorage.cs" />
-    <Compile Include="Infrastructure\HtmlHelpers\HtmlHelper.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\FormHtmlHelper.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\HtmlHelperIncluder.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\UserHtmlHelper.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapControllerActivator.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\Admin.css" />
     <Content Include="Assets\Css\Site.css" />
     <Content Include="Assets\Images\accent.png" />
     <Content Include="Assets\Images\bullet.png" />
@@ -223,6 +232,10 @@
     <Content Include="Assets\Images\orderedList8.png" />
     <Content Include="Assets\Images\orderedList9.png" />
     <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Settings.cshtml" />
     <None Include="Assets\Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.min.js" />
@@ -316,7 +329,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Infrastructure\HtmlHelpers\Included\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
