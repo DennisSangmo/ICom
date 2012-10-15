@@ -477,29 +477,24 @@ textarea {
     }
 
 /* info and errors */
-.message-info {
-    border: 1px solid;
+.flash {
+    border: 2px solid;
     clear: both;
     padding: 10px 20px;
-}
-
-.message-error {
-    clear: both;
-    color: #e80c4d;
+    font-weight: bold;
     font-size: 1.1em;
-    font-weight: bold;
-    margin: 20px 0 10px 0;
 }
 
-.message-success {
-    color: #7ac0da;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 20px 0 10px 0;
-}
-
-.error {
+.flash.error {
     color: #e80c4d;
+}
+
+.flash.success {
+    color: #64a05b;
+}
+
+.flash.warning {
+    color: #9da05b;
 }
 
 /* styles for validation helpers */

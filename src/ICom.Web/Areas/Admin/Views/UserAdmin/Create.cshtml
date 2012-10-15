@@ -1,0 +1,44 @@
+﻿@using ICom.Web.Infrastructure.HtmlHelpers
+@using ICom.Web.Areas.Admin.Controllers.UserAdmin.ViewModels
+@model CreateViewModel
+@{
+    ViewBag.Title = "Skapa ny användare";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Skapa ny användare</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Uppgifter</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(x => x.InputModel.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.InputModel.Name)
+            @Html.ValidationMessageFor(x => x.InputModel.Name)
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Rättigheter</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(x => x.InputModel.Type)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x => x.InputModel.Type, Html.UserHelper().TypeDropDown())
+            @Html.ValidationMessageFor(x => x.InputModel.Type)
+        </div>
+    </fieldset>
+
+    <p>
+        @Html.Submit("Skapa")
+    </p>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

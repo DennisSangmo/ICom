@@ -188,9 +188,11 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\CreateUserInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\PasswordInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\UserInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\UserAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\CreateViewModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\IndexViewModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\SettingsViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
@@ -210,6 +212,7 @@
     <Compile Include="Infrastructure\Authorization\Storage\SessionStorage.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\FormHtmlHelper.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\HtmlHelperIncluder.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\HtmlHelpers.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\UserHtmlHelper.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapControllerActivator.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapDependencyResolver.cs" />
@@ -236,6 +239,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\UserAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserAdmin\Settings.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Create.cshtml" />
     <None Include="Assets\Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.js" />
     <Content Include="Assets\Scripts\jquery-1.7.1.min.js" />

@@ -32,7 +32,8 @@ namespace ICom.Web.Areas.Admin.Controllers.UserAdmin {
             user.Name = inputModel.Name;
             user.Username = inputModel.Username;
 
-            return RedirectToAction("Settings", new {id});
+            FlashSuccess("Uppgifterna har uppdaterats!");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -46,7 +47,23 @@ namespace ICom.Web.Areas.Admin.Controllers.UserAdmin {
             var user = _userService.Get(id);
             user.Password = Encrypter.Encrypt(passwordInputModel.Password);
 
+            FlashSuccess("Lösenordet har uppdaterats!");
             return RedirectToAction("Settings", new {id});
+        }
+
+        public ActionResult Create() {
+            return View(new CreateViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Create(CreateUserInputModel inputModel) {
+            if (!ModelState.IsValid)
+                return Create();
+
+            _userService.Create(inputModel.Name, inputModel.Type);
+
+            FlashSuccess("Användaren har skapats!");
+            return RedirectToAction("Index");
         }
     }
 }
