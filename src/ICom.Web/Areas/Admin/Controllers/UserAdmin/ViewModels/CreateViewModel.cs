@@ -1,10 +1,10 @@
-using ICom.Web.Areas.Admin.Controllers.UserAdmin.InputModels;
+using ICom.Core.Entities.UserEntity;
 
 namespace ICom.Web.Areas.Admin.Controllers.UserAdmin.ViewModels {
     public class CreateViewModel {
-        public CreateUserInputModel InputModel { get; set; }
+        public User User { get; set; }
         public CreateViewModel() {
-            InputModel = new CreateUserInputModel();
+            User = new User();
         }
     }
 }

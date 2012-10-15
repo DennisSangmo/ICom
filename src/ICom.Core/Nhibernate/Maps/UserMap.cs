@@ -11,6 +11,7 @@ namespace ICom.Core.Nhibernate.Maps {
             Map(x => x.Password);
             Map(x => x.Name);
             Map(x => x.Type).CustomType<UserType>().Default("3");
+            Map(x => x.Email);
         }
     }
 }

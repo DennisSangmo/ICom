@@ -9,16 +9,7 @@
 <h2>Inställningar för @Model.User.Name</h2>
 
 @using (Html.BeginForm(new { id = Model.User.Id })) {
-    <p>
-        @Html.LabelFor(x => x.InputModel.Name)
-        @Html.TextBoxFor(x => x.InputModel.Name)
-        @Html.ValidationMessageFor(x => x.InputModel.Name)
-    </p>
-    <p>
-        @Html.LabelFor(x => x.InputModel.Username)
-        @Html.TextBoxFor(x => x.InputModel.Username)
-        @Html.ValidationMessageFor(x => x.InputModel.Username)
-    </p>
+    @Html.EditorFor(x => x.User)
     
     <p>@Html.Submit("Uppdatera")</p>
 }

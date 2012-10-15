@@ -37,12 +37,10 @@ namespace ICom.Core.Services {
             return _session.QueryOver<User>().List();
         }
 
-        public User Create(string name, UserType type) {
-            var username = NameToUsername(name);
+        public User Create(User user) {
             var password = GeneratePassword(8);
-            var user = new User(name, username, password) {
-                                                        Type = type
-                                                    };
+            user.Password = Encrypter.Encrypt(password);
+
             _session.Save(user);
 
             // TODO send the password to the user!
@@ -60,8 +58,16 @@ namespace ICom.Core.Services {
             return builder.ToString();
         }
 
-        private static string NameToUsername(string name) {
+        public static string NameToUsername(string name) {
             return name.ToLower().Replace(" ", ".");
+        }
+
+        public bool IsUsernameFree(string username) {
+            return _session.QueryOver<User>().Where(x => x.Username == username).RowCount() == 0;
+        }
+
+        public bool IsEmailFree(string email) {
+            return _session.QueryOver<User>().Where(x => x.Email == email).RowCount() == 0;
         }
     }
 }

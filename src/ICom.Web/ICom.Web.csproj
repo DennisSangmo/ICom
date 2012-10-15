@@ -188,7 +188,6 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\CreateUserInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\PasswordInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\UserInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\UserAdminController.cs" />
@@ -240,22 +239,23 @@
     <Content Include="Areas\Admin\Views\UserAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserAdmin\Settings.cshtml" />
     <Content Include="Areas\Admin\Views\UserAdmin\Create.cshtml" />
-    <None Include="Assets\Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="Assets\Scripts\jquery-1.7.1.js" />
-    <Content Include="Assets\Scripts\jquery-1.7.1.min.js" />
-    <Content Include="Assets\Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Assets\Scripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Assets\Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Assets\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="Assets\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Assets\Scripts\jquery.validate.js" />
-    <Content Include="Assets\Scripts\jquery.validate.min.js" />
-    <Content Include="Assets\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Assets\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Assets\Scripts\knockout-2.1.0.debug.js" />
-    <Content Include="Assets\Scripts\knockout-2.1.0.js" />
-    <Content Include="Assets\Scripts\modernizr-2.5.3.js" />
-    <Content Include="Assets\Scripts\_references.js" />
+    <None Include="Assets\Scripts\libs\jquery-1.7.1.intellisense.js" />
+    <Content Include="Assets\Scripts\app\userform.js" />
+    <Content Include="Assets\Scripts\libs\jquery-1.7.1.js" />
+    <Content Include="Assets\Scripts\libs\jquery-1.7.1.min.js" />
+    <Content Include="Assets\Scripts\libs\jquery-ui-1.8.20.js" />
+    <Content Include="Assets\Scripts\libs\jquery-ui-1.8.20.min.js" />
+    <Content Include="Assets\Scripts\libs\jquery.unobtrusive-ajax.js" />
+    <Content Include="Assets\Scripts\libs\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Assets\Scripts\libs\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\Scripts\libs\jquery.validate.js" />
+    <Content Include="Assets\Scripts\libs\jquery.validate.min.js" />
+    <Content Include="Assets\Scripts\libs\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\Scripts\libs\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\Scripts\libs\knockout-2.1.0.debug.js" />
+    <Content Include="Assets\Scripts\libs\knockout-2.1.0.js" />
+    <Content Include="Assets\Scripts\libs\modernizr-2.5.3.js" />
+    <Content Include="Assets\Scripts\libs\_references.js" />
     <Content Include="Assets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Assets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Assets\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -329,6 +329,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

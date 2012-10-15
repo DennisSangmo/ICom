@@ -1,0 +1,50 @@
+﻿@using ICom.Web.Infrastructure.HtmlHelpers
+@model ICom.Core.Entities.UserEntity.User
+
+@{
+    Layout = null;
+}
+
+<fieldset>
+    <legend>Uppgifter</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Name)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Name, new {id = "nameinput"})
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Email)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Loginuppgifter</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Username)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Username, new {id = "usernameinput"})
+        @Html.ValidationMessageFor(x => x.Username)
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Rättigheter</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Type)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.Type, Html.UserHelper().TypeDropDown(selected: Model.Type))
+        @Html.ValidationMessageFor(x => x.Type)
+    </div>
+</fieldset>
