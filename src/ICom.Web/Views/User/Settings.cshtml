@@ -14,3 +14,21 @@
 
     @Html.Submit("Spara")
 }
+
+<h2>Byta lösenord</h2>
+
+@using (Html.BeginForm("ChangePassword", "User", new { id = Model.User.Id })) {
+    <p>
+        @Html.LabelFor(x => x.PasswordInputModel.Password)
+        @Html.PasswordFor(x => x.PasswordInputModel.Password)
+        @Html.ValidationMessageFor(x => x.PasswordInputModel.Password)
+    </p>
+    
+    <p>
+        @Html.LabelFor(x => x.PasswordInputModel.PasswordRepeat)
+        @Html.PasswordFor(x => x.PasswordInputModel.PasswordRepeat)
+        @Html.ValidationMessageFor(x => x.PasswordInputModel.PasswordRepeat)
+    </p>
+    
+    <p>@Html.Submit("Spara")</p>
+}

@@ -24,14 +24,12 @@ namespace ICom.Web.Areas.Admin.Controllers.UserAdmin {
         }
 
         [HttpPost]
-        public ActionResult Settings(int id, UserInputModel inputModel) {
+        public ActionResult Settings(int id, User user) {
             if (!ModelState.IsValid)
                 return Settings(id);
 
-            var user = _userService.Get(id);
-
-            user.Name = inputModel.Name;
-            user.Username = inputModel.Username;
+            var existionUser = _userService.Get(id);
+            existionUser.BigUpdate(user);
 
             FlashSuccess("Uppgifterna har uppdaterats!");
             return RedirectToAction("Index");

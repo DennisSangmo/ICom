@@ -189,7 +189,6 @@
     <Compile Include="Areas\Admin\Controllers\Admin\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\PasswordInputModel.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserAdmin\InputModels\UserInputModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\UserAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\CreateViewModel.cs" />
     <Compile Include="Areas\Admin\Controllers\UserAdmin\ViewModels\IndexViewModel.cs" />
@@ -199,6 +198,7 @@
     <Compile Include="Controllers\Account\ViewModels\LoginViewModel.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Users\InputModels\PasswordInputModel.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Controllers\Users\ViewModels\UserSettingsViewModel.cs" />
     <Compile Include="Global.asax.cs">
