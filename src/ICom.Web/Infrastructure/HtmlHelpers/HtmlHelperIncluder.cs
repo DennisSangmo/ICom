@@ -21,7 +21,9 @@ namespace ICom.Web.Infrastructure.HtmlHelpers {
         }
 
         public IEnumerable<SelectListItem> TypeDropDown(string dummyText = "", UserType selected = UserType.Normal) {
-            var types = Enum.GetValues(typeof (UserType)).Cast<UserType>().ToSelectList(x => x.GetDescription(), x => ((int)x).ToString(), x => x == selected);
+            var types = Enum.GetValues(typeof (UserType))
+                            .Cast<UserType>()
+                            .ToSelectList(x => x.GetDescription(), x => ((int)x).ToString(), x => x == selected);
 
             if (dummyText != "")
                 types.InsertDummy("Användartyp", "0");

@@ -13,9 +13,23 @@ namespace ICom.Web.Controllers {
         private User _cacheUser;
         public new User User { get { return _cacheUser ?? (_cacheUser = UserStorage.Get(SessionKeys.User)); } }
 
-
         protected override void OnResultExecuting(ResultExecutingContext filterContext) {
             filterContext.Controller.ViewBag.User = User;
+        }
+
+        public void FlashSuccess(string message) {
+            TempData.Add("FlashClass", "success");
+            TempData.Add("FlashMessage", message);
+        }
+
+        public void FlashWarning(string message) {
+            TempData.Add("FlashClass", "warning");
+            TempData.Add("FlashMessage", message);
+        }
+
+        public void FlashError(string message) {
+            TempData.Add("FlashClass", "error");
+            TempData.Add("FlashMessage", message);
         }
     }
 }

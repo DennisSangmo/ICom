@@ -1,0 +1,16 @@
+﻿@using ICom.Web.Infrastructure.HtmlHelpers
+@model ICom.Web.Controllers.Users.ViewModels.UserSettingsViewModel
+
+@{
+    ViewBag.Title = "Inställningar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inställningar</h2>
+
+@using(Html.BeginForm())
+{
+    @Html.EditorFor(x => x.User)
+
+    @Html.Submit("Spara")
+}

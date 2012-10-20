@@ -24,27 +24,28 @@
         @Html.ValidationMessageFor(x => x.Email)
     </div>
 </fieldset>
+@if(Html.IsAdmin())
+{
+    <fieldset>
+        <legend>Loginuppgifter</legend>
 
-<fieldset>
-    <legend>Loginuppgifter</legend>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.Username)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(x => x.Username, new {id = "usernameinput"})
+            @Html.ValidationMessageFor(x => x.Username)
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Rättigheter</legend>
 
-    <div class="editor-label">
-        @Html.LabelFor(x => x.Username)
-    </div>
-    <div class="editor-field">
-        @Html.TextBoxFor(x => x.Username, new {id = "usernameinput"})
-        @Html.ValidationMessageFor(x => x.Username)
-    </div>
-</fieldset>
-
-<fieldset>
-    <legend>Rättigheter</legend>
-
-    <div class="editor-label">
-        @Html.LabelFor(x => x.Type)
-    </div>
-    <div class="editor-field">
-        @Html.DropDownListFor(x => x.Type, Html.UserHelper().TypeDropDown(selected: Model.Type))
-        @Html.ValidationMessageFor(x => x.Type)
-    </div>
-</fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.Type)
+        </div>
+        <div class="editor-field">
+            @Html.HardDrawDropDown("User.Type", Html.UserHelper().TypeDropDown(selected: Model.Type))
+            @Html.ValidationMessageFor(x => x.Type)
+        </div>
+    </fieldset>
+}
