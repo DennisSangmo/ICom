@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using ICom.Core.Entities.UserInfoEntity;
 
 namespace ICom.Core.Entities.UserEntity {
     public class User : Entity {
@@ -20,6 +22,8 @@ namespace ICom.Core.Entities.UserEntity {
         [DisplayName("E-post")]
         [Required(ErrorMessage = "Ni måste ange en e-post adress")]
         public virtual string Email { get; set; }
+
+        public virtual ICollection<UserInfo> UserInfos { get; set; }
 
         public virtual bool IsAdmin { get { return Type >= UserType.Administrator; } }
 

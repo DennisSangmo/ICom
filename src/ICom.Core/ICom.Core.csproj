@@ -54,10 +54,13 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\UserEntity\User.cs" />
     <Compile Include="Entities\UserEntity\UserType.cs" />
+    <Compile Include="Entities\UserInfoEntity\UserInfoType.cs" />
+    <Compile Include="Entities\UserInfoEntity\UserInfo.cs" />
     <Compile Include="Extensions\Collections\CollectionExtensions.cs" />
     <Compile Include="Extensions\Collections\FormCollectionExtensions.cs" />
     <Compile Include="Extensions\Collections\UserCollectionExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Nhibernate\Maps\UserInfoMap.cs" />
     <Compile Include="Nhibernate\Maps\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UserService.cs" />

@@ -12,6 +12,8 @@ namespace ICom.Core.Nhibernate.Maps {
             Map(x => x.Name);
             Map(x => x.Type).CustomType<UserType>().Default("3");
             Map(x => x.Email);
+
+            HasMany(x => x.UserInfos).KeyColumn("user_id").Cascade.SaveUpdate();
         }
     }
 }
