@@ -64,9 +64,9 @@ namespace ICom.Core.Entities.UserEntity {
 
         public virtual void AddInfo(UserInfo userInfo)
         {
+            UserInfos.Add(userInfo);
             userInfo.UserId = Id;
             userInfo.User = this;
-            UserInfos.Add(userInfo);
         }
 
         public virtual void DeleteInfo(UserInfo info)

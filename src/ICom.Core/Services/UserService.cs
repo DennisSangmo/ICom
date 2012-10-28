@@ -19,7 +19,6 @@ namespace ICom.Core.Services {
             return _session.QueryOver<User>()
                            .Where(x => x.Username == username)
                            .Where(x => x.Password == hash)
-                           .Take(1)
                            .SingleOrDefault();
         }
 
@@ -30,15 +29,11 @@ namespace ICom.Core.Services {
         public User Get(string username) {
             return _session.QueryOver<User>()
                            .Where(x => x.Username == username)
-                           .Fetch(x => x.UserInfos).Eager
-                           .Take(1)
                            .SingleOrDefault();
         }
 
         public IEnumerable<User> GetAll() {
-            return _session.QueryOver<User>()
-                           .Fetch(x => x.UserInfos).Eager
-                           .List();
+            return _session.QueryOver<User>().List();
         }
 
         public User Create(User user) {
