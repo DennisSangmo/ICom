@@ -73,5 +73,25 @@ namespace ICom.Web.Controllers.Users {
             FlashSuccess("Informationen har lagts till!");
             return RedirectToAction("Settings");
         }
+
+        public ActionResult DeleteInfo(int id)
+        {
+            var info = _userService.GetInfo(id);
+
+            if(info.UserId != User.Id)
+            {
+                FlashError("Ni kan inte ta bort denna informationen!");
+                return RedirectToAction("Settings");
+            }
+
+            var existingUser = _userService.Get(info.UserId);
+
+            existingUser.DeleteInfo(info);
+
+            _storage.Store(SessionKeys.User, existingUser);
+
+            FlashSuccess("Informationen har tagits bort!");
+            return RedirectToAction("Settings");
+        }
     }
 }

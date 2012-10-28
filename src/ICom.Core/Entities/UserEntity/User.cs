@@ -68,5 +68,13 @@ namespace ICom.Core.Entities.UserEntity {
             userInfo.User = this;
             UserInfos.Add(userInfo);
         }
+
+        public virtual void DeleteInfo(UserInfo info)
+        {
+            if (UserInfos.All(x => x.Id != info.Id))
+                return;
+            
+            UserInfos.Remove(info);
+        }
     }
 }

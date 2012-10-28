@@ -28,6 +28,7 @@
                     <tr>
                         <th>@info.Type.GetDescription()</th>
                         <td>@info.Info</td>
+                        <td>@Html.ActionLink("Ta bort", "DeleteInfo", new {id = info.Id})</td>
                     </tr>
                 }
             </tbody>

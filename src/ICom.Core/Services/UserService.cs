@@ -73,5 +73,10 @@ namespace ICom.Core.Services {
         public bool IsEmailFree(string email) {
             return _session.QueryOver<User>().Where(x => x.Email == email).RowCount() == 0;
         }
+
+        public UserInfo GetInfo(int id)
+        {
+            return _session.Get<UserInfo>(id);
+        }
     }
 }
