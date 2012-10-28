@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using ICom.Core.Entities.UserInfoEntity;
 
 namespace ICom.Core.Entities.UserEntity {
@@ -26,9 +27,12 @@ namespace ICom.Core.Entities.UserEntity {
         public virtual ICollection<UserInfo> UserInfos { get; set; }
 
         public virtual bool IsAdmin { get { return Type >= UserType.Administrator; } }
+        public virtual bool HasUserInfos { get { return UserInfos.Any(); } }
 
         public User() {
             Type = UserType.Normal;
+
+            UserInfos = new List<UserInfo>();
         }
 
         public User(string name, string username, string password, string email) : this() {
@@ -56,6 +60,13 @@ namespace ICom.Core.Entities.UserEntity {
         {
             Name = user.Name;
             Email = user.Email;
+        }
+
+        public virtual void AddInfo(UserInfo userInfo)
+        {
+            userInfo.UserId = Id;
+            userInfo.User = this;
+            UserInfos.Add(userInfo);
         }
     }
 }

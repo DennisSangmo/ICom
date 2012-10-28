@@ -1,4 +1,5 @@
 ﻿@using ICom.Web.Infrastructure.HtmlHelpers
+@using ICom.Core.Extensions
 @model ICom.Web.Controllers.Users.ViewModels.UserSettingsViewModel
 
 @{
@@ -14,6 +15,49 @@
 
     @Html.Submit("Spara")
 }
+
+<div id="userinfo">
+    <h2>Annan inforamtion</h2>
+    <a href="#add-userinfo" id="add-info" rel="leanModal">+ Lägg till information</a>
+    @if (Model.User.HasUserInfos)
+    {
+        <table>
+            <tbody>
+                @foreach(var info in Model.User.UserInfos)
+                {
+                    <tr>
+                        <th>@info.Type.GetDescription()</th>
+                        <td>@info.Info</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    } else
+    {
+        <p>Ingen annan information är tillagt!</p>
+    }
+    <div id="add-userinfo" class="popup">
+        <div class="head">
+            <h2>Lägg till information</h2>
+        </div>
+        <div class="body">
+            @using(Html.BeginForm("CreateInfo", "User"))
+            {
+                <p>
+                    @Html.LabelFor(x => x.NewUserInfo.Type)
+                    @Html.DropDownListFor(x => x.NewUserInfo.Type, Model.UserInfoTypes)
+                    @Html.ValidationMessageFor(x => x.NewUserInfo.Type)
+                </p>
+                <p>
+                    @Html.LabelFor(x => x.NewUserInfo.Info)
+                    @Html.TextBoxFor(x => x.NewUserInfo.Info)
+                    @Html.ValidationMessageFor(x => x.NewUserInfo.Info)
+                </p>
+                <p>@Html.Submit("Lägg till")</p>
+            }
+        </div>
+    </div>
+</div>
 
 <h2>Byta lösenord</h2>
 

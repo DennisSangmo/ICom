@@ -246,6 +246,7 @@
     <Content Include="Assets\Scripts\libs\jquery-1.7.1.min.js" />
     <Content Include="Assets\Scripts\libs\jquery-ui-1.8.20.js" />
     <Content Include="Assets\Scripts\libs\jquery-ui-1.8.20.min.js" />
+    <Content Include="Assets\Scripts\libs\jquery.leanModal.min.js" />
     <Content Include="Assets\Scripts\libs\jquery.unobtrusive-ajax.js" />
     <Content Include="Assets\Scripts\libs\jquery.unobtrusive-ajax.min.js" />
     <None Include="Assets\Scripts\libs\jquery.validate-vsdoc.js" />

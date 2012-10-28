@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ICom.Core.AuthSecurity;
 using ICom.Core.Entities.UserEntity;
+using ICom.Core.Entities.UserInfoEntity;
 using NHibernate;
 
 namespace ICom.Core.Services {
@@ -29,12 +30,15 @@ namespace ICom.Core.Services {
         public User Get(string username) {
             return _session.QueryOver<User>()
                            .Where(x => x.Username == username)
+                           .Fetch(x => x.UserInfos).Eager
                            .Take(1)
                            .SingleOrDefault();
         }
 
         public IEnumerable<User> GetAll() {
-            return _session.QueryOver<User>().List();
+            return _session.QueryOver<User>()
+                           .Fetch(x => x.UserInfos).Eager
+                           .List();
         }
 
         public User Create(User user) {
